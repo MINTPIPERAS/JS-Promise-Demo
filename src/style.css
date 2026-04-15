@@ -1,0 +1,288 @@
+:root {
+  --bg: #f6f4ef;
+  --paper: #fffdf8;
+  --text: #1f2430;
+  --muted: #5b6475;
+  --line: #d8d2c7;
+  --brand: #0a7f78;
+  --brand-2: #f25f5c;
+  --code-bg: #232634;
+  --code-text: #f2f2f2;
+
+  font-family: 'Avenir Next', 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(10, 127, 120, 0.1), transparent 35%),
+    radial-gradient(circle at 80% 15%, rgba(242, 95, 92, 0.12), transparent 40%),
+    var(--bg);
+}
+
+#app {
+  width: min(1100px, 100% - 2rem);
+  margin: 2rem auto;
+}
+
+.page {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.hero {
+  background: linear-gradient(120deg, #fffdf8, #f7efe2 75%);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.4rem 1.4rem 1.6rem;
+  box-shadow: 0 12px 30px rgba(31, 36, 48, 0.08);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0.35rem 0 0.6rem;
+  font-family: 'Segoe UI Semibold', 'Trebuchet MS', sans-serif;
+  font-size: clamp(1.55rem, 2.8vw, 2.3rem);
+  line-height: 1.2;
+}
+
+.lead {
+  margin: 0;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.panel.wide {
+  grid-column: 1 / -1;
+}
+
+.panel h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+}
+
+.panel p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.mini-grid {
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.mini-card,
+.step,
+.snippet-box {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.mini-card {
+  padding: 0.75rem;
+}
+
+.mini-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.96rem;
+}
+
+.mini-card p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.snippet-box {
+  margin-top: 0.9rem;
+  overflow: hidden;
+}
+
+.snippet-title {
+  margin: 0;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--line);
+  background: #faf7f0;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.status-line {
+  margin-top: 0.35rem;
+}
+
+.result {
+  margin-top: 0.35rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.state {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 1px solid var(--line);
+}
+
+.state.pending {
+  color: #7a6600;
+  background: #fff5cc;
+}
+
+.state.fulfilled {
+  color: #0a5f3f;
+  background: #d9f8e7;
+}
+
+.state.rejected {
+  color: #8a1d23;
+  background: #ffe1e1;
+}
+
+.tips {
+  margin: 0.7rem 0;
+  padding-left: 1.1rem;
+  color: var(--text);
+}
+
+.tips li {
+  margin: 0.35rem 0;
+}
+
+.simple-list {
+  margin-top: 0.9rem;
+}
+
+.steps {
+  margin: 0.9rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.step {
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.step strong {
+  color: var(--text);
+}
+
+.step span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.actions {
+  margin: 0.8rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+button {
+  border: 1px solid var(--brand);
+  background: var(--brand);
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.48rem 0.8rem;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--brand);
+}
+
+.log {
+  margin: 0;
+  min-height: 150px;
+  max-height: 250px;
+  overflow: auto;
+  background: var(--code-bg);
+  color: var(--code-text);
+  border-radius: 12px;
+  padding: 0.75rem;
+  font-family: 'Cascadia Code', Consolas, monospace;
+  font-size: 0.84rem;
+  white-space: pre-wrap;
+}
+
+.demo-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.compact {
+  min-height: 0;
+  max-height: none;
+  border-radius: 0 0 12px 12px;
+}
+
+@media (max-width: 860px) {
+  #app {
+    width: min(1100px, 100% - 1rem);
+    margin: 1rem auto;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-grid,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .panel.wide {
+    grid-column: auto;
+  }
+}
